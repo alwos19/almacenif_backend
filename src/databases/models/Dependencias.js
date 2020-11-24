@@ -1,15 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-class Activo extends Model {}
+class Dependencia extends Model {}
 
-Activo.init({
+Dependencia.init({
     nombre: DataTypes.STRING,
     descripcion: DataTypes.STRING
 }, {
     sequelize,
-    modelName: "activo",
+    modelName: "dependencias",
     timestamps: false
 });
 
-module.exports = Activo;
+module.exports = Dependencia;
