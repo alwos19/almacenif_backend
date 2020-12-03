@@ -19,7 +19,7 @@ app.use(require('./src/routes/aulas'));
 app.use(require('./src/routes/estados'));
 app.use(require('./src/routes/horario'));
 
-app.listen(7000, () => {
+app.listen(process.env.PORT, () => {
     console.log('listen on port 7000');
 });
 

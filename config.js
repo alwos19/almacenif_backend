@@ -6,3 +6,5 @@ module.exports = {
         host: 'localhost'
     }
 }
+
+process.env.PORT = process.env.PORT || 7000;
