@@ -8,7 +8,8 @@ User.init({
     apellido: DataTypes.STRING,
     cedula: DataTypes.INTEGER,
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    rolId: DataTypes.INTEGER
 
 }, {
     sequelize,

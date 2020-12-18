@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const User = require('../databases/models/Users');
 const Rol = require('../databases/models/Roles');
+const { Result } = require('express-validator');
+const Dependencia = require('../databases/models/Dependencias');
 
 
 
@@ -9,7 +11,12 @@ router.get('/users', async(req, res) => {
         include: {
             model: Rol,
             as: "rol",
-            attributes: ['nombre']
+            attributes: ['rol'],
+
+            model: Dependencia,
+            as: "dependencia",
+            attributes: ['dependencia']
+
         },
         attributes: ['nombre', 'cedula']
     });
@@ -17,8 +24,25 @@ router.get('/users', async(req, res) => {
 })
 
 router.post('/users/signup', async(req, res) => {
-    const user = await User.create(req.body);
+    const user = await User.create(req.body)
+
     res.json(user);
+
+
+    // nombre: req.body.nombre,
+    // apellido: req.body.apellido,
+    // cedula: req.body.cedula,
+    // email: req.body.email,
+    // password: req.body.password,
+    // rolId: req.body.rolId
+
+    // await Rol.create({ rol: req.body.rol }).then(rol => {
+    //     user.setRol(rol).then(result => {
+    //         res.json(user);
+    //     })
+    // });
+
+
 });
 
 router.put('/users/:userId', async(req, res) => {

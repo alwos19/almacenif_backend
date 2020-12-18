@@ -4,7 +4,7 @@ const sequelize = require('../db');
 class Rol extends Model {}
 
 Rol.init({
-    nombre: DataTypes.STRING,
+    rol: DataTypes.STRING,
     descripcion: DataTypes.STRING
 }, {
     sequelize,

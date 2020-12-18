@@ -23,7 +23,7 @@ app.listen(process.env.PORT, () => {
     console.log('listen on port 7000');
 });
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     console.log('conect to data base')
 }).catch(error => {
     console.log('Error DB conect', error);

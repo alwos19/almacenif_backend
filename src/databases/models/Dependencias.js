@@ -4,7 +4,7 @@ const sequelize = require('../db');
 class Dependencia extends Model {}
 
 Dependencia.init({
-    nombre: DataTypes.STRING,
+    dependencia: DataTypes.STRING,
     descripcion: DataTypes.STRING
 }, {
     sequelize,
