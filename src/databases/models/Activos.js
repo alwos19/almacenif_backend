@@ -5,6 +5,7 @@ class Activo extends Model {}
 
 Activo.init({
     nombre: DataTypes.STRING,
+    serial: DataTypes.INTEGER,
     descripcion: DataTypes.STRING
 }, {
     sequelize,
